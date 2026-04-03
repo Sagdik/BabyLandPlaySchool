@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Comic+Neue:wght@400;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Poppins", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Comic Neue", cursive;
+  
+  --color-school-yellow: #FFD700;
+  --color-school-red: #FF0000;
+  --color-school-yellow-light: #FFEB3B;
+  --color-school-red-light: #FF5252;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply font-sans text-gray-800 bg-white;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display font-bold;
+  }
+}
+
+.school-gradient {
+  background: linear-gradient(135deg, var(--color-school-yellow) 0%, var(--color-school-red) 100%);
+}
+
+.school-card {
+  @apply bg-white rounded-3xl shadow-xl overflow-hidden border-4 border-school-yellow/20 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1;
+}
+
+.school-btn-primary {
+  @apply px-8 py-3 bg-school-red text-white font-bold rounded-full shadow-lg hover:bg-school-red-light transition-all duration-300 transform hover:scale-105 active:scale-95;
+}
+
+.school-btn-secondary {
+  @apply px-8 py-3 bg-school-yellow text-gray-900 font-bold rounded-full shadow-lg hover:bg-school-yellow-light transition-all duration-300 transform hover:scale-105 active:scale-95;
+}
+
+.input-field {
+  @apply w-full px-4 py-3 rounded-2xl border-2 border-gray-200 focus:border-school-yellow focus:outline-none transition-colors;
+}
